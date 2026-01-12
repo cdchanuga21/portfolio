@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chanuga Demith | Graphic Designer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+    <div class="loader-text">CHANUGA DEMITH</div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="logo">Chanuga<span>Demith</span></div>
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="menu" id="menu">☰</div>
+</header>
+
+<!-- HERO WITH VIDEO -->
+<section class="hero" id="home">
+    <video autoplay muted loop class="hero-video">
+        <source src="video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay">
+        <h1>GRAPHIC DESIGNER</h1>
+        <h2>Chanuga Demith</h2>
+        <a href="#portfolio" class="btn">View Work</a>
+    </div>
+</section>
+
+<!-- ABOUT (PARALLAX) -->
+<section class="section parallax animate" id="about">
+    <h3 class="section-title">About Me</h3>
+    <p class="section-text">
+        I design premium visual identities, modern creatives, and bold branding
+        experiences for digital and print platforms.
+    </p>
+</section>
+
+<!-- PORTFOLIO WITH OVERLAYS -->
+<section class="section animate" id="portfolio">
+    <h3 class="section-title">Portfolio</h3>
+
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <img src="images/work1.jpg">
+            <div class="overlay">
+                <h4>Brand Design</h4>
+                <a href="#" class="overlay-btn">View</a>
+            </div>
+        </div>
+
+        <div class="portfolio-item">
+            <img src="images/work2.jpg">
+            <div class="overlay">
+                <h4>Poster Design</h4>
+                <a href="#" class="overlay-btn">View</a>
+            </div>
+        </div>
+
+        <div class="portfolio-item">
+            <img src="images/work3.jpg">
+            <div class="overlay">
+                <h4>Social Media</h4>
+                <a href="#" class="overlay-btn">View</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section dark animate" id="contact">
+    <h3 class="section-title">Contact</h3>
+    <form class="contact-form">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <button class="btn">Send</button>
+    </form>
+</section>
+
+<footer class="footer">
+© 2026 Chanuga Demith · Graphic Designer
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+🎨 style.css
+css
+Copy code
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+body{background:#000;color:#fff;overflow-x:hidden}
+
+/* LOADER */
+#loader{
+position:fixed;width:100%;height:100%;
+background:#000;display:flex;
+align-items:center;justify-content:center;
+z-index:9999;
+}
+.loader-text{
+font-size:30px;letter-spacing:5px;
+animation:pulse 1.5s infinite;
+}
+@keyframes pulse{
+0%{opacity:.3}50%{opacity:1}100%{opacity:.3}
+}
+
+/* HEADER */
+.header{
+position:fixed;width:100%;
+padding:18px 40px;
+display:flex;justify-content:space-between;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+.logo span{color:#d4af37}
+nav a{margin-left:25px;color:#fff;text-decoration:none}
+
+/* HERO VIDEO */
+.hero{
+height:100vh;position:relative;
+overflow:hidden;
+}
+.hero-video{
+width:100%;height:100%;
+object-fit:cover;
+}
+.hero-overlay{
+position:absolute;top:0;left:0;
+width:100%;height:100%;
+display:flex;flex-direction:column;
+align-items:center;justify-content:center;
+background:rgba(0,0,0,.6);
+text-align:center;
+}
+.hero h1{color:#d4af37;letter-spacing:6px}
+.hero h2{font-size:50px;margin:15px}
+
+/* BUTTON */
+.btn{
+padding:14px 36px;
+background:linear-gradient(45deg,#d4af37,#f5d76e);
+color:#000;border-radius:30px;
+text-decoration:none;font-weight:bold;
+}
+
+/* SECTIONS */
+.section{
+padding:120px 20px;
+max-width:1100px;margin:auto;
+}
+.dark{background:#000}
+.section-title{text-align:center;font-size:36px;margin-bottom:40px}
+
+/* PARALLAX */
+.parallax{
+background:url("images/parallax.jpg") center/cover fixed;
+}
+
+/* PORTFOLIO */
+.portfolio-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+.portfolio-item{
+position:relative;overflow:hidden;
+}
+.portfolio-item img{
+width:100%;height:100%;object-fit:cover;
+transition:.5s;
+}
+.overlay{
+position:absolute;top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,.7);
+display:flex;flex-direction:column;
+align-items:center;justify-content:center;
+opacity:0;transition:.5s;
+}
+.portfolio-item:hover img{transform:scale(1.1)}
+.portfolio-item:hover .overlay{opacity:1}
+.overlay-btn{
+margin-top:10px;padding:8px 20px;
+border:1px solid #d4af37;
+color:#d4af37;text-decoration:none;
+}
+
+/* ANIMATIONS */
+.animate{opacity:0;transform:translateY(40px);transition:1s}
+.animate.show{opacity:1;transform:translateY(0)}
+
+.footer{text-align:center;padding:20px;background:#000}
+⚙️ script.js
+javascript
+Copy code
+// LOADER
+window.onload = () => {
+document.getElementById("loader").style.display="none";
+};
+
+// MENU
+const menu=document.getElementById("menu");
+const nav=document.getElementById("nav");
+menu.onclick=()=>nav.classList.toggle("active");
+
+// SCROLL REVEAL
+const items=document.querySelectorAll(".animate");
+window.addEventListener("scroll",()=>{
+items.forEach(i=>{
+if(i.getBoundingClientRect().top<window.innerHeight-100){
+i.classList.add("show");
+}
+});
+});
